@@ -63,6 +63,13 @@
  * Different environments will require different levels of error reporting.
  * By default development will show errors but testing and live will hide them.
  */
+date_default_timezone_set('Europe/Paris');
+
+$root = dirname(__FILE__);
+var_dump($root);
+
+
+
 switch (ENVIRONMENT)
 {
 	case 'development':
