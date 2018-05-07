@@ -10,5 +10,6 @@
 
 			$this->load->view('_templates/header');
 			$this->load->view('pages/'.$page, $data);
+			$this->load->view('_templates/header');
 		}
 	}
