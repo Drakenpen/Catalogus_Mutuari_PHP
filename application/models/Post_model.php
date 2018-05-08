@@ -13,4 +13,5 @@
 			$query = $this->db->get_where('posts', array('slug' => $slug));
 			return $query->row_array();
 		}
+
 	}

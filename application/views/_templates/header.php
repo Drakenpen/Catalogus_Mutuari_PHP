@@ -4,6 +4,7 @@
 	    <meta charset="utf-8">
 	    <title>Move is de tip.</title>
 		 	<link rel="stylesheet" href="https://bootswatch.com/4/sandstone/bootstrap.min.css">
+		 	<link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/style.css">
 	</head>
 	<body>
 
