@@ -5,7 +5,9 @@
 	<h3><?php echo $post['title']; ?></h3>
 
 	<small class="post-date">Posted on: <?php echo $post['created_at']; ?></small> </br>
-
+<div class="post-body">
 	<?php echo $post['body']; ?>
+</div></br>
+	<p><a href="<?php echo site_url('/posts/'.$post['slug']); ?>">Read more</a></p>
 
 <?php } ?>
