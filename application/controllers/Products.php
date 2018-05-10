@@ -1,7 +1,7 @@
 <?php
 	class Products extends CI_Controller{	
 		public function index(){
-			$data['title'] = 'All products';
+			$data['title'] = 'Alle producten';
 
 			$data['products'] = $this->product_model->get_products();
 			//print_r($data['products']);

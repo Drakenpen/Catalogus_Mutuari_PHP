@@ -1,7 +1,7 @@
 <?php
 	class Posts extends CI_Controller{	
 		public function index(){
-			$data['title'] = 'Latest Posts';
+			$data['title'] = 'Laatste feedback';
 
 			$data['posts'] = $this->post_model->get_posts();
 			//$data['categories'] = $this->post_model->get_categories(); 

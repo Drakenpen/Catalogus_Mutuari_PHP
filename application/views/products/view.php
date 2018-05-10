@@ -1,4 +1,5 @@
 <h2><?php echo $product['title']; ?></h2>
+<br>
 <div class="product-body">
 <?php echo $product['body']; ?>
 </div>

@@ -1,5 +1,7 @@
 <h2><?= $title ?></h2>
-
+	      <div>
+	        <p><a class="btn btn-primary" href="<?php echo base_url(); ?>posts/create">Feedback geven</a></p>
+	      </div><br>
 <?php foreach($posts as $post) { ?>
 
 	<h3><?php echo $post['title']; ?></h3>

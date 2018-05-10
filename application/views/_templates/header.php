@@ -23,7 +23,7 @@
 	        <a class="nav-link" href="<?php echo base_url(); ?>about">About</a>
 	      </li>
 	      <li class="nav-item">
-	        <a class="nav-link" href="<?php echo base_url(); ?>posts">Posts</a>
+	        <a class="nav-link" href="<?php echo base_url(); ?>posts">Feedback</a>
 	      </li>
 	      <li class="nav-item">
 	        <a class="nav-link" href="<?php echo base_url(); ?>products">Catalogus</a>
@@ -31,7 +31,7 @@
 	    </ul>
 	    <ul class="nav navbar-nav navbar-right">
 	      <li class="nav-item">
-	        <a class="nav-link" href="<?php echo base_url(); ?>posts/create">Product toevoegen</a>
+	        <a class="nav-link" href="">Account</a>
 	      </li>
 	    </ul>
 	  </div>
