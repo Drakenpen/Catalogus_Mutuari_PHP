@@ -23,7 +23,10 @@
 	        <a class="nav-link" href="<?php echo base_url(); ?>about">About</a>
 	      </li>
 	      <li class="nav-item">
-	        <a class="nav-link" href="<?php echo base_url(); ?>posts">Catalogus</a>
+	        <a class="nav-link" href="<?php echo base_url(); ?>posts">Posts</a>
+	      </li>
+	      <li class="nav-item">
+	        <a class="nav-link" href="<?php echo base_url(); ?>products">Catalogus</a>
 	      </li>
 	    </ul>
 	    <ul class="nav navbar-nav navbar-right">

@@ -2,15 +2,15 @@
 
 <?php echo validation_errors(); ?>
 
-<?php echo form_open('posts/update'); ?>
-	<input type="hidden" name="Id" value="<?php echo $post['Id']; ?>">
+<?php echo form_open('products/update'); ?>
+	<input type="hidden" name="Id" value="<?php echo $product['Id']; ?>">
   <div class="form-group">
     <label>Title</label>
-    <input type="text" class="form-control" name="title" placeholder="Add Title" value="<?php echo $post['title']; ?>">
+    <input type="text" class="form-control" name="title" placeholder="Add Title" value="<?php echo $product['title']; ?>">
   </div>
   <div class="form-group">
     <label>Body</label>
-    <textarea class="form-control" name="body" placeholder="Add Body"><?php echo $post['body']; ?></textarea>
+    <textarea class="form-control" name="body" placeholder="Add Body"><?php echo $product['body']; ?></textarea>
   </div>
   <div class="form-group">
     <label>Categorieën</label>
