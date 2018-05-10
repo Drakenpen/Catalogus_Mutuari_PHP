@@ -3,7 +3,8 @@
 		public function index(){
 			$data['title'] = 'Latest Posts';
 
-			$data['posts'] = $this->post_model->get_posts(); 
+			$data['posts'] = $this->post_model->get_posts();
+			//$data['categories'] = $this->post_model->get_categories(); 
 			//print_r($data['posts']);
 
 			$this->load->view('_templates/header');
@@ -27,6 +28,8 @@
 		public function create(){
 			$data['title'] = 'Create Post';
 
+			$data['categories'] = $this->category_model->get_categories();
+
 			$this->form_validation->set_rules('title', 'Title', 'required');
 			$this->form_validation->set_rules('body', 'Body', 'required');
 
@@ -47,7 +50,8 @@
 
 		public function edit($slug){
 			$data['post'] = $this->post_model->get_posts($slug);
-
+			$data['categories'] = $this->category_model->get_categories();
+			
 			if(empty($data['post'])){
 				show_404();
 			}
