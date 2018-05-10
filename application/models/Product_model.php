@@ -43,7 +43,7 @@
 				'title' => $this->input->post('title'),
 				'slug' => $slug,
 				'body' => $this->input->post('body'),
-				'category_id' => $this->input->post('category_id')
+				'category_id' => $this->input->post('category_id'),				
 			);
 
 			$this->db->where('Id', $this->input->post('Id'));
