@@ -11,7 +11,7 @@
 		<div class="col-md-9">
 		<strong><?php echo $product['name']; ?></strong></small> </br>
 			<?php echo word_limiter($product['body'], 50); ?></br></br>
-			<p><a href="<?php echo site_url('/products/'.$product['slug']); ?>">Read more</a></p>
+			<p><a href="<?php echo site_url('/products/'.$product['slug']); ?>">See all products</a></p>
 		</div>
 	</div>
 	<br>

@@ -24,7 +24,7 @@
 				'slug' => $slug,
 				'body' => $this->input->post('body'),
 				'category_id' => $this->input->post('category_id'),
-				'Product_image' => $product_image
+				'product_image' => $product_image
 		);
 
 			return $this->db->insert('products', $data); 
