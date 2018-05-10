@@ -14,5 +14,6 @@
 			<p><a href="<?php echo site_url('/posts/'.$post['slug']); ?>">Read more</a></p>
 		</div>
 	</div>
+	<br>
 
 <?php } ?> 
