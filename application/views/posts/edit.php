@@ -16,7 +16,7 @@
     <label>Categorieën</label>
       <select name="category_id" class="form-control">
           <?php foreach($categories as $category) { ?>
-          <option value="<?php echo $category['Id']; ?>"><?php echo $category['name']; ?></option>
+          <option <?php if ($post['category_id'] == $category['Id']){ echo "selected"; }?> value="<?php echo $category['Id']; ?>"><?php echo $category['name']; ?></option>
           <?php } ?> 
       </select>
   </div> 
