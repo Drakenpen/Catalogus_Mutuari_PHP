@@ -17,7 +17,10 @@
 	  <div class="collapse navbar-collapse" id="navbarColor01">
 	    <ul class="navbar-nav mr-auto">
 	      <li class="nav-item">
-	        <a class="nav-link" href="<?php echo base_url(); ?>products/create">Create Product</a>
+	        <a class="nav-link" href="<?php echo base_url(); ?>products/create">Product aanmaken</a>
+	      </li>
+	      <li class="nav-item">
+	        <a class="nav-link" href="<?php echo base_url(); ?>categories/create">Categorie aanmaken</a>
 	      </li>
 	    </ul>
 	    <ul class="nav navbar-nav navbar-right">
