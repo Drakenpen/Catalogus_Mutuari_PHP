@@ -26,3 +26,13 @@
   </div>  
   <button type="submit" class="btn btn-default">Submit</button>
 </form>
+
+<br><br>
+<hr>
+<h3>Deze post verwijderen</h3>
+<hr>
+  <div>
+    <?php echo form_open('/posts/delete/'.$post['Id']); ?>
+      <input type='submit' value="delete" class="btn btn-primary">
+    </form> 
+  </div>

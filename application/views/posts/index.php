@@ -1,11 +1,9 @@
 <h2><?= $title ?></h2>
 <hr class="my-4">
-
-	      <div>
-	        <p><a class="btn btn-primary" href="<?php echo base_url(); ?>posts/create">Feedback geven</a></p>
-	      </div>
+  <div>
+  	   <p><a class="btn btn-success" href="<?php echo base_url(); ?>posts/create">Feedback geven</a></p>
+  </div>
 <table class="table table-hover">
-
   <tbody>
  <?php foreach($posts as $post) { ?>
     <tr class="table-light">
@@ -18,3 +16,4 @@
 </table> 
 
 <hr class="my-4">
+<br>

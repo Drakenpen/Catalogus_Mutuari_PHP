@@ -2,7 +2,7 @@
 <html lang="en">
 	<head>
 	    <meta charset="utf-8">
-	    <title>Move is de tip.</title>
+	    <title>Catalogus Mutuari 2.0</title>
 		 	<link rel="stylesheet" href="https://bootswatch.com/4/sandstone/bootstrap.min.css">
 		 	<link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/style.css">
 	</head>
@@ -28,10 +28,10 @@
 	    </ul>
 	    <ul class="nav navbar-nav navbar-right">
 	      <li class="nav-item">
-	        <a class="nav-link" href="">Winkelmand</a>
+	        <a class="nav-link" href="<?php echo base_url(); ?>shoppingcart/index">Winkelmand</a>
 	      </li>
 	      <li class="nav-item">
-	        <a class="nav-link" href="<?php echo base_url(); ?>users/login">Account</a>
+	        <a class="nav-link" href="<?php echo base_url(); ?>users/index">Account</a>
 	      </li>
 	      <?php if($this->session->userdata('logged_in')) : ?>
 	      <li class="nav-item">

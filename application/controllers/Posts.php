@@ -63,11 +63,19 @@
 		}
 
 		public function delete($id){
+			//Check admin
+			if(!$this->session->userdata('logged_in')){
+				redirect('users/login');
+			}
 				$this->post_model->delete_post($id);
 				redirect('posts');
 		}
 
 		public function edit($slug){
+			//Check admin
+			if(!$this->session->userdata('logged_in')){
+				redirect('users/login');
+			}
 			$data['post'] = $this->post_model->get_posts($slug);
 
 			if(empty($data['post'])){
@@ -81,6 +89,10 @@
 		}
 
 		public function update(){
+			//Check admin
+			if(!$this->session->userdata('logged_in')){
+				redirect('users/login');
+			}			
 			$this->post_model->update_post();
 			redirect('posts');
 		}		

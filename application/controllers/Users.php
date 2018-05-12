@@ -1,7 +1,25 @@
 <?php
 	class Users extends CI_Controller{	
+		public function index(){
+			//Check admin
+			if(!$this->session->userdata('logged_in')){
+				redirect('users/login');
+			}
+			$data['title'] = 'Mijn account';
+
+			//print_r($data['products']);
+
+			$this->load->view('_templates/header');
+			$this->load->view('users/index', $data);
+			$this->load->view('_templates/footer');
+		}
+
 		//Registreren
 		public function register(){
+			//Check logged in
+			if($this->session->userdata('logged_in')){
+				redirect('users/index');
+			}
 			$data['title'] = 'Registreren';
 
 			$this->form_validation->set_rules('name', 'Name', 'required');
@@ -29,6 +47,10 @@
 
 		//Inloggen
 		public function login(){
+			//Check logged in
+			if($this->session->userdata('logged_in')){
+				redirect('users/index');
+			}
 			$data['title'] = 'Inloggen';
 
 			$this->form_validation->set_rules('employeenumber', 'EmployeeNumber', 'required');
