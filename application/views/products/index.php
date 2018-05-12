@@ -1,8 +1,9 @@
 <h2><?= $title ?></h2>
 <br>
+<div class="jumbotron">
+<?php if($products) : ?>
 <div class="row">
 <?php foreach($products as $product) { ?>
-
 <div class="col-lg-4">
 	<div class="bs-docs-section">
 
@@ -20,3 +21,13 @@
 <?php } ?> 
 </div>
 <br><br>
+</div>
+<?php else : ?>
+<div class="jumbotron">
+  <p class="lead">Deze categorie lijkt nog geen producten te hebben.</p>
+  <hr class="my-4">
+  <p class="lead">
+    <a class="btn btn-secondary btn-lg" href="<?php echo base_url(); ?>categories" role="button">Terug naar categorieën</a>
+  </p>
+</div>
+<?php endif; ?>

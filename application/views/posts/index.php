@@ -1,22 +1,20 @@
 <h2><?= $title ?></h2>
+<hr class="my-4">
+
 	      <div>
 	        <p><a class="btn btn-primary" href="<?php echo base_url(); ?>posts/create">Feedback geven</a></p>
-	      </div><br>
-<?php foreach($posts as $post) { ?>
+	      </div>
+<table class="table table-hover">
 
-<div class="row">
-	<img class="post-thumb" src="<?php echo site_url(); ?>assets/images/posts/<?php echo $post['post_image']; ?>" height="130" width="130">
-	  <div class="card-body">
-	    <h4 class="card-title"><?php echo $post['title']; ?></h4>
-	    <h6 class="card-subtitle mb-2 text-muted">Posted on: <strong><?php echo $post['created_at']; ?></strong></h6>
-	    <p class="card-text"><?php echo word_limiter($post['body'], 50); ?></p>
-	    <a href="<?php echo site_url('/posts/'.$post['slug']); ?>" class="card-link">Read more</a>
-	</div>
-</div>
+  <tbody>
+ <?php foreach($posts as $post) { ?>
+    <tr class="table-light">
+      <th scope="row"><img class="post-thumb" src="<?php echo site_url(); ?>assets/images/posts/<?php echo $post['post_image']; ?>" height="30" width="30"></th>
+      <td><a href="<?php echo site_url('/posts/'.$post['slug']); ?>" class="card-link"><?php echo $post['title']; ?></a></td>
+      <th scope="row"><small>Posted on: <strong><?php echo $post['created_at']; ?></strong></small><th>
+    </tr>
+ <?php } ?> 
+  </tbody>
+</table> 
 
-<br><br>
-
-<?php } ?> 
-
-<br><br>
-
+<hr class="my-4">

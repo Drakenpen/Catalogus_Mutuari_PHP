@@ -16,6 +16,7 @@
 <h3>Productexemplaren</h3>
 <hr>
 <?php if($product_items) : ?>
+<div class="jumbotron">
 <div class="row">
 <?php foreach($product_items as $product_item) { ?>
 
@@ -33,7 +34,7 @@
 </div>
 <?php } ?> 
 </div>
-
+</div>
 <?php else : ?>
 	<p>Er zijn momenteel geen exemplaren voor dit product.</p>
 <?php endif; ?>

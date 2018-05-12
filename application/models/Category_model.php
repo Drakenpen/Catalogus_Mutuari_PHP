@@ -30,8 +30,6 @@
 		}
 
 		public function update_category(){
-			//$slug = url_title($this->input->post('name'));
-
 			$data = array(
 				'name' => $this->input->post('name'),			
 			);
