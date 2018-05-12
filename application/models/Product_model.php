@@ -56,5 +56,11 @@
 				$query = $this->db->get_where('products', array('category_id' => $category_id));
 				return $query->result_array();
 		}
-		
+
+		public function get_product_items_by_product($product_id){
+				$this->db->order_by('product_items.id', 'DESC');
+				$this->db->join('products', 'products.id = product_items.product_id');
+				$query = $this->db->get_where('product_items', array('product_id' => $product_id));
+				return $query->result_array();
+		}
 	}

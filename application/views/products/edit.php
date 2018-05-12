@@ -24,5 +24,18 @@
     <label>Upload Image</label>
     <input type="file" name="userfile" size="20">
   </div>
-  <button type="submit" class="btn btn-default">Submit</button>
-</form>
+    <button type="submit" class="btn btn-default">Submit</button>
+    <?php echo form_open('/products/delete/'.$product['Id']); ?>
+      <input type='submit' value="delete" class="btn btn-primary">
+    </form> 
+</form> 
+
+<br><br>
+<hr>
+<h3>Dit product verwijderen</h3>
+<hr>
+  <div>
+    <?php echo form_open('/products/delete/'.$product['Id']); ?>
+      <input type='submit' value="delete" class="btn btn-primary">
+    </form> 
+  </div>
