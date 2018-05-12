@@ -34,4 +34,26 @@
 	  </div>
 	</nav>
 	<br>
+
    	<div class="container">
+
+  		<?php if($this->session->flashdata('user_registered')): ?>
+  			<?php echo '<p class="alert alert-success">'.$this->session->flashdata('user_registered').'</p>'; ?>
+  		<?php endif; ?>
+   		<?php if($this->session->flashdata('category_created')): ?>
+  			<?php echo '<p class="alert alert-success">'.$this->session->flashdata('category_created').'</p>'; ?>
+  		<?php endif; ?>
+   		<?php if($this->session->flashdata('product_created')): ?>
+  			<?php echo '<p class="alert alert-success">'.$this->session->flashdata('product_created').'</p>'; ?>
+  		<?php endif; ?>
+  		
+   		<?php if($this->session->flashdata('post_created')): ?>
+  			<?php echo '<p class="alert alert-succes">'.$this->session->flashdata('post_created').'</p>'; ?>
+  		<?php endif; ?>
+   		<?php if($this->session->flashdata('product_updated')): ?>
+  			<?php echo '<p class="alert alert-success">'.$this->session->flashdata('product_updated').'</p>'; ?>
+  		<?php endif; ?>
+
+   		<?php if($this->session->flashdata('product_deleted')): ?>
+  			<?php echo '<p class="alert alert-danger">'.$this->session->flashdata('product_deleted').'</p>'; ?>
+  		<?php endif; ?>

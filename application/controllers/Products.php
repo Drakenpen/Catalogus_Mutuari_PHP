@@ -25,7 +25,7 @@
 		}
 
 		public function create(){
-			$data['title'] = 'Create product';
+			$data['title'] = 'Product toevoegen';
 
 			$data['categories'] = $this->category_model->get_categories();
 
@@ -55,12 +55,20 @@
 				}
 
 				$this->product_model->create_product($product_image);
+
+				//Message
+				$this->session->set_flashdata('product_created', 'Het product is aangemaakt');
+
 				redirect('products');
 			}
 		}
 
 		public function delete($id){
 				$this->product_model->delete_product($id);
+
+				//Message
+				$this->session->set_flashdata('product_deleted', 'Het product is verwijderd');
+
 				redirect('products');
 		}
 
@@ -71,7 +79,7 @@
 			if(empty($data['product'])){
 				show_404();
 			}
-			$data['title'] = 'Edit product';
+			$data['title'] = 'Product aanpassen';
 
 			$this->load->view('_templates/header');
 			$this->load->view('products/edit', $data);
@@ -80,6 +88,10 @@
 
 		public function update(){
 			$this->product_model->update_product();
+
+			//Message
+			$this->session->set_flashdata('product_updated', 'Het product is gewijzigd');
+
 			redirect('products');
 		}		
 	}

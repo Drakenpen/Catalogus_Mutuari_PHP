@@ -4,12 +4,12 @@
 
 <?php echo form_open_multipart('products/create'); ?>
   <div class="form-group">
-    <label>Title</label>
-    <input type="text" class="form-control" name="title" placeholder="Add Title">
+    <label>Naam</label>
+    <input type="text" class="form-control" name="title" placeholder="Naam">
   </div>
   <div class="form-group">
-    <label>Body</label>
-    <textarea id="editor1" class="form-control" name="body" placeholder="Add Body"></textarea>
+    <label>Content</label>
+    <textarea id="editor1" class="form-control" name="body" placeholder="Content"></textarea>
   </div>
   <div class="form-group">
     <label>Categorieën</label>
@@ -20,8 +20,8 @@
       </select>
   </div> 
   <div class="form-group">
-    <label>Upload Image</label>
+    <label>Afbeelding bijvoegen;</label>
     <input type="file" name="userfile" size="20">
   </div>
-  <button type="submit" class="btn btn-default">Submit</button>
+  <button type="submit" class="btn btn-default">Toevoegen</button>
 </form>

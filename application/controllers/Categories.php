@@ -21,6 +21,10 @@
 				$this->load->view('_templates/footer');
 			} else {
 				$this->category_model->create_category();
+
+				//Message
+				$this->session->set_flashdata('category_created', 'De categorie is aangemaakt');
+
 				redirect('categories');
 			}
 		}
