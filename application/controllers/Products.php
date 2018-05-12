@@ -25,6 +25,11 @@
 		}
 
 		public function create(){
+			//Check admin
+			if(!$this->session->userdata('logged_in')){
+				redirect('users/login');
+			}
+
 			$data['title'] = 'Product toevoegen';
 
 			$data['categories'] = $this->category_model->get_categories();
@@ -41,8 +46,8 @@
 				$config['upload_path'] = './assets/images/products';
 				$config['allowed_types'] = 'jpg|png';
 				$config['max_size'] = '2048';
-				$config['max_width'] = '500';
-				$config['max_height'] = '500';
+				$config['max_width'] = '2048';
+				$config['max_height'] = '2048';
 
 				$this->load->library('upload', $config);
 
@@ -64,6 +69,11 @@
 		}
 
 		public function delete($id){
+			//Check admin
+			if(!$this->session->userdata('logged_in')){
+				redirect('users/login');
+			}
+
 				$this->product_model->delete_product($id);
 
 				//Message
@@ -73,6 +83,11 @@
 		}
 
 		public function edit($slug){
+			//Check admin
+			if(!$this->session->userdata('logged_in')){
+				redirect('users/login');
+			}
+
 			$data['product'] = $this->product_model->get_products($slug);
 			$data['categories'] = $this->category_model->get_categories();
 
@@ -87,6 +102,11 @@
 		}
 
 		public function update(){
+			//Check admin
+			if(!$this->session->userdata('logged_in')){
+				redirect('users/login');
+			}
+			
 			$this->product_model->update_product();
 
 			//Message

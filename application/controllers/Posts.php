@@ -56,6 +56,10 @@
 				}
 
 				$this->post_model->create_post($post_image);
+
+				//Message
+				$this->session->set_flashdata('post_created', 'Je feedback is verzonden!');
+
 				redirect('posts');
 			}
 		}

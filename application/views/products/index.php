@@ -6,7 +6,7 @@
 <div class="col-lg-4">
 	<div class="bs-docs-section">
 
-	<h4 class="card-title"><strong><?php echo $product['name']; ?></strong></h4>
+	<h4 class="card-title"><small><a href="<?php echo site_url('/categories/products/'.$product['category_id']); ?>"><?php echo ($product['name']); ?></a></small></h4>
 		<div class="card border-primary mb-3" style="max-width: 20rem;">
 		  <div class="card-header"><img class="post-thumb" src="<?php echo site_url(); ?>assets/images/products/<?php echo $product['product_image']; ?>" height="150" width="150"></strong></div>    
 		  <div class="card-body">

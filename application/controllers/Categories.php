@@ -11,6 +11,11 @@
 		}
 
 		public function create(){
+			//Check admin
+			if(!$this->session->userdata('logged_in')){
+				redirect('users/login');
+			}
+			
 			$data['title'] = 'Categorie aanmaken';
 
 			$this->form_validation->set_rules('name', 'Name', 'required');
