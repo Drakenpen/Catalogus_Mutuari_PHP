@@ -72,6 +72,9 @@
    		<?php if($this->session->flashdata('product_updated')): ?>
   			<?php echo '<p class="alert alert-success">'.$this->session->flashdata('product_updated').'</p>'; ?>
   		<?php endif; ?>
+  		<?php if($this->session->flashdata('category_updated')): ?>
+  			<?php echo '<p class="alert alert-success">'.$this->session->flashdata('category_updated').'</p>'; ?>
+  		<?php endif; ?>
 
    		<?php if($this->session->flashdata('product_deleted')): ?>
   			<?php echo '<p class="alert alert-danger">'.$this->session->flashdata('product_deleted').'</p>'; ?>

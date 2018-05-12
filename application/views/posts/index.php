@@ -4,20 +4,19 @@
 	      </div><br>
 <?php foreach($posts as $post) { ?>
 
-	<h3><?php echo $post['title']; ?></h3>
-
-	<div class="row">
-		<div class="col-md-3">
-			<img class="post-thumb" src="<?php echo site_url(); ?>assets/images/posts/<?php echo $post['post_image']; ?>" height="200" width="200">
-		</div>
-		<div class="col-md-9">
-		<small class="post-date">Posted on: <strong><?php echo $post['created_at']; ?></strong></small> </br>
-			<?php echo word_limiter($post['body'], 50); ?></br></br>
-			<p><a href="<?php echo site_url('/posts/'.$post['slug']); ?>">Read more</a></p>
-		</div>
+<div class="row">
+	<img class="post-thumb" src="<?php echo site_url(); ?>assets/images/posts/<?php echo $post['post_image']; ?>" height="130" width="130">
+	  <div class="card-body">
+	    <h4 class="card-title"><?php echo $post['title']; ?></h4>
+	    <h6 class="card-subtitle mb-2 text-muted">Posted on: <strong><?php echo $post['created_at']; ?></strong></h6>
+	    <p class="card-text"><?php echo word_limiter($post['body'], 50); ?></p>
+	    <a href="<?php echo site_url('/posts/'.$post['slug']); ?>" class="card-link">Read more</a>
 	</div>
-	<br>
+</div>
+
+<br><br>
 
 <?php } ?> 
 
 <br><br>
+

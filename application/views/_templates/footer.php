@@ -10,7 +10,7 @@
 <?php if($this->session->userdata('logged_in')) : ?>
 			<div class="footer">
 			  	<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-				  <a class="navbar-brand" href="">Editor</a>
+				  <a class="navbar-brand" href="">Beheer</a>
 				  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
 				    <span class="navbar-toggler-icon"></span>
 				  </button>
@@ -21,7 +21,7 @@
 				        <a class="nav-link" href="<?php echo base_url(); ?>products/create">Product aanmaken</a>
 				      </li>
 				      <li class="nav-item">
-				        <a class="nav-link" href="<?php echo base_url(); ?>categories/create">Categorie aanmaken</a>
+				        <a class="nav-link" href="<?php echo base_url(); ?>categories/create">Categorieën</a>
 				      </li>
 				    </ul>
 				    <ul class="nav navbar-nav navbar-right">

@@ -30,6 +30,8 @@
 				redirect('users/login');
 			}
 
+			$data['products'] = $this->product_model->get_products();
+
 			$data['title'] = 'Product toevoegen';
 
 			$data['categories'] = $this->category_model->get_categories();
@@ -106,7 +108,7 @@
 			if(!$this->session->userdata('logged_in')){
 				redirect('users/login');
 			}
-			
+
 			$this->product_model->update_product();
 
 			//Message
