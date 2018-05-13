@@ -27,108 +27,20 @@
 
 		<div class="card border-primary mb-3" style="max-width: 20rem;">  
 		  <div class="card-body">
-			  <h4 class="card-title"><strong><?php echo word_limiter ($product_item['title'], 5); ?></strong></h4>
-			    <p class="card-text"><?php echo word_limiter($product_item['body'], 20); ?></p>
+		  		<h4 class="card-title">
+		  			<strong><?php echo word_limiter ($product_item['title'], 5); ?> <?php if($this->session->userdata('logged_in')) : ?>
+          				<a class="btn btn-secondary" href="<?php echo base_url(); ?>product_items/edit/<?php echo $product_item['slug']; ?>">Edit</a>
+<?php endif; ?>
+					</strong>
+				</h4>
+			    <p class="card-text"><?php echo character_limiter($product_item['body'], 100); ?></p>
                 <p>
-                    <?php echo form_open('users/add_item'); ?>
-                        <button type="submit" class="btn btn-default" name="item" value="<?php echo $product_item['Id']; ?>">Toevoegen</button>
+                    <?php echo form_open('shoppingcart/add_item'); ?>
+                    	<input type="hidden" name="product_item_id" value="<?php echo $product_item['Id']; ?>">
+                    	<input type="hidden" name="employeenumber" value="<?php echo $_SESSION['employeenumber']; ?>">
+                        <button type="submit" class="btn btn-success" name="product_item" value="<?php echo $product_item['Id']; ?>">Toevoegen</button>
                     <?php echo form_close(); ?>
                 </p>
-			    <p><!DOCTYPE html>
-<html>
-<head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-body {font-family: Arial, Helvetica, sans-serif;}
-
-/* The Modal (background) */
-.modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    padding-top: 100px; /* Location of the box */
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-}
-
-/* Modal Content */
-.modal-content {
-    background-color: #fefefe;
-    margin: auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%;
-}
-
-/* The Close Button */
-.close {
-    color: #aaaaaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-    color: #000;
-    text-decoration: none;
-    cursor: pointer;
-}
-</style>
-</head>
-<body>
-
-<!-- Trigger/Open The Modal -->
-<button class="btn btn-success" id="myBtn<?php echo $product_item['Id']; ?>">Meer over dit product</button>
-
-<!-- The Modal -->
-<div id="myModal<?php echo $product_item['Id']; ?>" class="modal">
-
-  <!-- Modal content -->
-  <div class="modal-content">
-    <span class="close<?php echo $product_item['Id']; ?>">&times;</span>
-    <p><?php echo $product_item['title']; ?></p>
-  </div>
-
-</div>
-
-<script>
-// Get the modal
-var modal = document.getElementById('myModal<?php echo $product_item['Id']; ?>');
-
-// Get the button that opens the modal
-var btn = document.getElementById("myBtn<?php echo $product_item['Id']; ?>");
-
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close<?php echo $product_item['Id']; ?>")[0];
-
-// When the user clicks the button, open the modal 
-btn.onclick = function() {
-    modal.style.display = "block";
-}
-
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() {
-    modal.style.display = "none";
-}
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
-    }
-}
-</script>
-
-</body>
-</html>
-
-			    </p>
 		  </div>
 		</div>
 	</div>
@@ -137,5 +49,5 @@ window.onclick = function(event) {
 </div>
 </div>
 <?php else : ?>
-	<p>Er zijn momenteel geen exemplaren voor dit product.</p>
+	<p class="lead text-info">Er zijn momenteel geen exemplaren voor dit product.</p>
 <?php endif; ?>

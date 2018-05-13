@@ -78,17 +78,27 @@
   			<?php echo '<p class="alert alert-success">'.$this->session->flashdata('product_created').'</p>'; ?>
   		<?php endif; ?>		
    		<?php if($this->session->flashdata('post_created')): ?>
-  			<?php echo '<p class="alert alert-succes">'.$this->session->flashdata('post_created').'</p>'; ?>
+  			<?php echo '<p class="alert alert-success">'.$this->session->flashdata('post_created').'</p>'; ?>
   		<?php endif; ?>
+      <?php if($this->session->flashdata('product_item_created')): ?>
+        <?php echo '<p class="alert alert-success">'.$this->session->flashdata('product_item_created').'</p>'; ?>
+      <?php endif; ?>
 
-  		<!-- content deleted or edited -->
+  		<!-- content edited or deleted -->
    		<?php if($this->session->flashdata('product_updated')): ?>
   			<?php echo '<p class="alert alert-success">'.$this->session->flashdata('product_updated').'</p>'; ?>
   		<?php endif; ?>
   		<?php if($this->session->flashdata('category_updated')): ?>
   			<?php echo '<p class="alert alert-success">'.$this->session->flashdata('category_updated').'</p>'; ?>
   		<?php endif; ?>
+      <?php if($this->session->flashdata('product_item_updated')): ?>
+        <?php echo '<p class="alert alert-success">'.$this->session->flashdata('product_item_updated').'</p>'; ?>
+      <?php endif; ?>
+
 
    		<?php if($this->session->flashdata('product_deleted')): ?>
   			<?php echo '<p class="alert alert-danger">'.$this->session->flashdata('product_deleted').'</p>'; ?>
   		<?php endif; ?>
+      <?php if($this->session->flashdata('product_item_deleted')): ?>
+        <?php echo '<p class="alert alert-danger">'.$this->session->flashdata('product_item_deleted').'</p>'; ?>
+      <?php endif; ?>

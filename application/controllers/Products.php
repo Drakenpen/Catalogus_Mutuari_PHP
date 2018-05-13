@@ -15,7 +15,7 @@
 			$data['product'] = $this->product_model->get_products($slug);
 
 			$product_id = $data['product']['Id'];
-			$data['product_items'] = $this->product_item_model->get_product_items($product_id);
+			$data['product_items'] = $this->product_item_model->get_child_products($product_id);
 			
 			if(empty($data['product'])){
 				show_404();

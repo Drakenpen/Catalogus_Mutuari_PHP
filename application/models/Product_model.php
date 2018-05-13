@@ -6,8 +6,8 @@
 
 		public function get_products($slug = FALSE){
 			if($slug === FALSE){
-				$this->db->order_by('products.id', 'DESC');
-				$this->db->join('categories', 'categories.id = Products.category_id');
+				$this->db->order_by('products.category_id', 'DESC');
+				$this->db->join('categories', 'categories.Id = products.category_id');
 				$query = $this->db->get('products');
 				return $query->result_array();
 			}
@@ -61,6 +61,14 @@
 				$this->db->order_by('product_items.id', 'DESC');
 				$this->db->join('products', 'products.id = product_items.product_id');
 				$query = $this->db->get_where('product_items', array('product_id' => $product_id));
+				return $query->result_array();
+		}
+
+
+		//Used specifically to call for parent products in product_item controller
+		public function get_parent_products(){
+				$this->db->order_by('products.id', 'DESC');
+				$query = $this->db->get('products');
 				return $query->result_array();
 		}
 	}

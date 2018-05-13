@@ -21,6 +21,9 @@
 				        <a class="nav-link" href="<?php echo base_url(); ?>products/create">Product aanmaken</a>
 				      </li>
 				      <li class="nav-item">
+				        <a class="nav-link" href="<?php echo base_url(); ?>product_items/create">Exemplaren aanmaken</a>
+				      </li>
+				      <li class="nav-item">
 				        <a class="nav-link" href="<?php echo base_url(); ?>categories/create">Categorieën</a>
 				      </li>
 				    </ul>

@@ -49,29 +49,6 @@
 			}
 		}
 
-		public function empty_cart(){
-			$this->session->unset_userdata('item_selected');
-
-			//Message
-			$this->session->set_flashdata('cart_emptied', 'De winkelkar is leeg');
-
-			redirect('shoppingcart/index');
-		}
-
-		public function add_item(){
-			$item_id = $this->input->post('item');
-			$new_data = array(
-			        'test'  => $item_id,
-			   		'item_selected'  => TRUE,
-			);
-
-			$this->session->set_userdata($new_data);
-			//Message log in success
-			$this->session->set_flashdata('item_added', 'Product toegevoegd');
-
-			redirect('shoppingcart/index');
-    	}
-
 		//Inloggen
 		public function login(){
 			//Check logged in

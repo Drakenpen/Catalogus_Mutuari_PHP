@@ -4,6 +4,7 @@
 			$this->load->database();
 		}
 
+		//Used specifically to call categories in the product controller
 		public function get_categories(){
 				$this->db->order_by('name');
 				$query = $this->db->get('categories');
