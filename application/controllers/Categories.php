@@ -4,7 +4,7 @@
 			$data['title'] = 'Categorieën';
 
 			$data['categories'] = $this->category_model->get_categories();
-
+			
 			$this->load->view('_templates/header');
 			$this->load->view('categories/index', $data);
 			$this->load->view('_templates/footer');

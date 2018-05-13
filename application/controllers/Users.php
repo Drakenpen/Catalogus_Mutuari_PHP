@@ -7,7 +7,11 @@
 			}
 			$data['title'] = 'Mijn account';
 
-			//print_r($data['products']);
+			$user_id = $_SESSION['user_id'];
+			$data['loans'] = $this->user_model->get_loans($user_id);
+
+			//print_r($_SESSION['user_id']);
+			print_r($data['loans']);
 
 			$this->load->view('_templates/header');
 			$this->load->view('users/index', $data);
@@ -44,6 +48,29 @@
 				redirect('products');
 			}
 		}
+
+		public function empty_cart(){
+			$this->session->unset_userdata('item_selected');
+
+			//Message
+			$this->session->set_flashdata('cart_emptied', 'De winkelkar is leeg');
+
+			redirect('shoppingcart/index');
+		}
+
+		public function add_item(){
+			$item_id = $this->input->post('item');
+			$new_data = array(
+			        'test'  => $item_id,
+			   		'item_selected'  => TRUE,
+			);
+
+			$this->session->set_userdata($new_data);
+			//Message log in success
+			$this->session->set_flashdata('item_added', 'Product toegevoegd');
+
+			redirect('shoppingcart/index');
+    	}
 
 		//Inloggen
 		public function login(){

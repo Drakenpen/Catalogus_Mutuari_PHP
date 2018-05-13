@@ -28,6 +28,11 @@
 			}
 		}
 
+		public function get_loans($user_id){
+			$query = $this->db->get_where('loans', array('user_id' => $user_id));
+			return $query->result_array();
+		}
+
 		// Check employeenumber
 		public function check_employeenumber_exists($employeenumber){
 			$query = $this->db->get_where('users', array('employeenumber' => $employeenumber));

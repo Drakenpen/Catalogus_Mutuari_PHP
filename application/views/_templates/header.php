@@ -44,6 +44,18 @@
 	<br>
 
    	<div class="container">
+   		<!-- shopping cart session-->
+   		<?php if($this->session->flashdata('cart_emptied')): ?>
+  			<?php echo '<p class="alert alert-success">'.$this->session->flashdata('cart_emptied').'</p>'; ?>
+  		<?php endif; ?>
+   		<?php if($this->session->flashdata('product_added')): ?>
+  			<?php echo '<p class="alert alert-success">'.$this->session->flashdata('product_added').'</p>'; ?>
+  		<?php endif; ?>
+   		<?php if($this->session->flashdata('adding_failed')): ?>
+  			<?php echo '<p class="alert alert-danger">'.$this->session->flashdata('adding_failed').'</p>'; ?>
+  		<?php endif; ?>
+
+  		<!-- user session -->
    		<?php if($this->session->flashdata('user_loggedin')): ?>
   			<?php echo '<p class="alert alert-success">'.$this->session->flashdata('user_loggedin').'</p>'; ?>
   		<?php endif; ?>
@@ -51,11 +63,11 @@
    		<?php if($this->session->flashdata('user_loggedout')): ?>
   			<?php echo '<p class="alert alert-success">'.$this->session->flashdata('user_loggedout').'</p>'; ?>
   		<?php endif; ?>
-
    		<?php if($this->session->flashdata('login_failed')): ?>
   			<?php echo '<p class="alert alert-danger">'.$this->session->flashdata('login_failed').'</p>'; ?>
   		<?php endif; ?>
 
+  		<!-- content created -->
   		<?php if($this->session->flashdata('user_registered')): ?>
   			<?php echo '<p class="alert alert-success">'.$this->session->flashdata('user_registered').'</p>'; ?>
   		<?php endif; ?>
@@ -69,6 +81,7 @@
   			<?php echo '<p class="alert alert-succes">'.$this->session->flashdata('post_created').'</p>'; ?>
   		<?php endif; ?>
 
+  		<!-- content deleted or edited -->
    		<?php if($this->session->flashdata('product_updated')): ?>
   			<?php echo '<p class="alert alert-success">'.$this->session->flashdata('product_updated').'</p>'; ?>
   		<?php endif; ?>

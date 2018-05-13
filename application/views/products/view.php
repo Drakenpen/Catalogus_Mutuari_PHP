@@ -29,6 +29,11 @@
 		  <div class="card-body">
 			  <h4 class="card-title"><strong><?php echo word_limiter ($product_item['title'], 5); ?></strong></h4>
 			    <p class="card-text"><?php echo word_limiter($product_item['body'], 20); ?></p>
+                <p>
+                    <?php echo form_open('users/add_item'); ?>
+                        <button type="submit" class="btn btn-default" name="item" value="<?php echo $product_item['Id']; ?>">Toevoegen</button>
+                    <?php echo form_close(); ?>
+                </p>
 			    <p><!DOCTYPE html>
 <html>
 <head>

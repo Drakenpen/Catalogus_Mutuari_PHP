@@ -3,7 +3,11 @@
 		public function index(){
 			$data['title'] = 'Mijn winkelwagen';
 
-			//print_r($data['products']);
+			if($this->session->userdata('item_selected')){
+				echo "welkom";
+				//$data['products'] = $_SESSION['test'];
+			}
+
 
 			$this->load->view('_templates/header');
 			$this->load->view('shoppingcart/index', $data);
