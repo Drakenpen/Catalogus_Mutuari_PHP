@@ -12,16 +12,20 @@
   <tbody>
     <tr class="table-light">
       <?php foreach($products as $product) { ?>
-      <th scope="row"><img class="post-thumb" src="placeholder" height="30" width="30"></th>
+      <th scope="row"><img class="post-thumb" src="<?php echo site_url(); ?>assets/images/products/<?php echo $product['post_image']; ?>" height="30" width="30"></th></th>
       <td><a href="" class="card-link"></a></td>
-      <th scope="row"><small>Posted on: <strong>placeholder</strong></small><th>
-      <p><?php echo $product['title']; ?></p>
+      <th scope="row"><?php echo $product['title']; ?></th>
+      <th scope="row"><?php echo $product['slug']; ?></th>
      <?php } ?> 
     </tr>
   </tbody>
 </table>  
-
+  <?php if($this->session->userdata('logged_in')) : ?>
+  
 <button type="submit" class="btn btn-success" name="product_item" value="">Lening afsluiten</button>
+<?php else : ?>
+  <p class="lead text-info">Log in om door te gaan naar bestellen.</p>
+<?php endif; ?>
 <hr class="my-4">
 <a class="nav-link" href="<?php echo base_url(); ?>shoppingcart/empty_cart">Winkelwagen legen</a>
 <br>

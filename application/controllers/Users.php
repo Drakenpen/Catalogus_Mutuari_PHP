@@ -10,8 +10,7 @@
 			$user_id = $_SESSION['user_id'];
 			$data['loans'] = $this->user_model->get_loans($user_id);
 
-			//print_r($_SESSION['user_id']);
-			print_r($data['loans']);
+			//print_r($data['loans']);
 
 			$this->load->view('_templates/header');
 			$this->load->view('users/index', $data);
@@ -70,7 +69,6 @@
 				$employeenumber = $this->input->post('employeenumber');
 				//Get encrypted password
 				$password = md5($this->input->post('password'));
-
 				//Log in user
 				$user_id = $this->user_model->login($employeenumber, $password);
 

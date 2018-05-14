@@ -29,6 +29,7 @@
 		}
 
 		public function get_loans($user_id){
+			$this->db->join('product_items', 'product_items.Id = loans.product_item_id');
 			$query = $this->db->get_where('loans', array('user_id' => $user_id));
 			return $query->result_array();
 		}

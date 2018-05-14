@@ -8,17 +8,33 @@
 
 <br>
 <hr>
-<h3>Lopende leningen</h3>
+<h3>Uw leningen</h3>
 <hr>
 <?php if($loans) : ?>
 <table class="table table-hover">
+    <thead>
+    <tr>
+      <th scope="col"></th>
+      <th scope="col">Gebruiker</th>
+      <th scope="col">Product</th>
+      <th scope="col"></th>
+      <th scope="col">Slug</th>
+      <th scope="col"></th>
+      <th scope="col">Begin datum</th>
+      <th scope="col"></th>
+      <th scope="col">Eind datum</th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
   <tbody>
     <?php foreach($loans as $loan) { ?>
     <tr class="table-light">
-      <th scope="row"><img class="post-thumb" src="placeholder" height="30" width="30"></th>
-      <td><a href="" class="card-link">welkom</a></td>
-      <th scope="row"><small>Gebruiker: <strong></strong></small><th>
-      <th scope="row"><small>Product: <strong></strong></small><th>
+      <th scope="row"><img class="post-thumb" src="<?php echo site_url(); ?>assets/images/products/<?php echo $loan['post_image']; ?>" height="30" width="30"></th>
+      <th scope="row"><?php echo $_SESSION['employeenumber']; ?>
+      <th scope="row"><?php echo $loan['title']; ?><th>
+      <th scope="row"><?php echo $loan['slug']; ?><th>
+      <th scope="row"><?php echo $loan['loan_start']; ?><th>
+      <th scope="row"><?php echo $loan['loan_end']; ?><th>
     </tr>
     <?php } ?> 
   </tbody>
@@ -28,30 +44,3 @@
 <?php endif; ?>
 <hr class="my-4">
 <br>
-
-<br>
-<hr>
-<h3>Leen geschiedenis</h3>
-<hr>
-<?php if($loans) : ?>
-<table class="table table-hover">
-  <tbody>
-    <?php foreach($loans as $loan) { ?>
-    <tr class="table-light">
-      <th scope="row"><img class="post-thumb" src="placeholder" height="30" width="30"></th>
-      <td><a href="" class="card-link">welkom</a></td>
-      <th scope="row"><small>Gebruiker: <strong></strong></small><th>
-      <th scope="row"><small>Product: <strong></strong></small><th>
-    </tr>
-    <?php } ?> 
-  </tbody>
-</table> 
-<?php else : ?>
-  <p>niets te zien hier</p>
-<?php endif; ?>
-<hr class="my-4">
-<br>
-
-<!-- <?php if($this->session->userdata('user_id') == $loan['user_id']): ?>
-<p>welkom</p>
-<?php endif; ?> -->

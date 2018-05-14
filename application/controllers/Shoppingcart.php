@@ -14,6 +14,19 @@
 			$this->load->view('_templates/footer');
 		}
 
+		public function checkout(){
+			$data['title'] = 'Lening afsluiten';
+			
+			if($this->session->userdata('item_selected')){
+				$product_id = $_SESSION['product_item'];
+				$data['products'] = $this->product_item_model->get_selected_products($product_id);
+			}
+			
+			$this->load->view('_templates/header');
+			$this->load->view('shoppingcart/checkout', $data);
+			$this->load->view('_templates/footer');
+		}
+
 		//Clears item session
 		public function empty_cart(){
 			$this->session->unset_userdata('item_selected');
@@ -34,8 +47,8 @@
 			);
 
 			$this->session->set_userdata($cart_data);
-			//Message log in success
-			$this->session->set_flashdata('item_added', 'Product toegevoegd');
+			//Message add item success
+			$this->session->set_flashdata('item_added', 'Product toegevoegd. Momenteel is dit helaas beperkt tot één product.');
 
 			redirect('shoppingcart/index');
     	}

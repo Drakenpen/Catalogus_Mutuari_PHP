@@ -19,6 +19,10 @@ $route['categories/create'] = 'categories/create';
 $route['categories/products/(:any)'] = 'categories/products/$1';
 $route['categories'] = 'categories/index';
 
+$route['shoppingcart'] = 'shoppingcart/index';
+
+$route['users'] = 'users/index';
+
 $route['default_controller'] = 'pages/view';
 
 $route['(:any)'] = 'pages/view/$1';

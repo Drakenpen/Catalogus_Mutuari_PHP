@@ -19,6 +19,9 @@
 	      <li class="nav-item">
 	        <a class="nav-link" href="<?php echo base_url(); ?>about">About</a>
 	      </li>
+        <li class="nav-item">
+          <a class="nav-link" href="<?php echo base_url(); ?>help">Hulp</a>
+        </li>
 	      <li class="nav-item">
 	        <a class="nav-link" href="<?php echo base_url(); ?>posts">Feedback</a>
 	      </li>
@@ -28,10 +31,10 @@
 	    </ul>
 	    <ul class="nav navbar-nav navbar-right">
 	      <li class="nav-item">
-	        <a class="nav-link" href="<?php echo base_url(); ?>shoppingcart/index">Winkelmand</a>
+	        <a class="nav-link" href="<?php echo base_url(); ?>shoppingcart">Winkelmand</a>
 	      </li>
 	      <li class="nav-item">
-	        <a class="nav-link" href="<?php echo base_url(); ?>users/index">Account</a>
+	        <a class="nav-link" href="<?php echo base_url(); ?>users">Account</a>
 	      </li>
 	      <?php if($this->session->userdata('logged_in')) : ?>
 	      <li class="nav-item">
@@ -48,8 +51,8 @@
    		<?php if($this->session->flashdata('cart_emptied')): ?>
   			<?php echo '<p class="alert alert-success">'.$this->session->flashdata('cart_emptied').'</p>'; ?>
   		<?php endif; ?>
-   		<?php if($this->session->flashdata('product_added')): ?>
-  			<?php echo '<p class="alert alert-success">'.$this->session->flashdata('product_added').'</p>'; ?>
+   		<?php if($this->session->flashdata('item_added')): ?>
+  			<?php echo '<p class="alert alert-success">'.$this->session->flashdata('item_added').'</p>'; ?>
   		<?php endif; ?>
    		<?php if($this->session->flashdata('adding_failed')): ?>
   			<?php echo '<p class="alert alert-danger">'.$this->session->flashdata('adding_failed').'</p>'; ?>
