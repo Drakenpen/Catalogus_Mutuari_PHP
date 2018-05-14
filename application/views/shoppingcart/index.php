@@ -11,15 +11,17 @@
 <table class="table table-hover">
   <tbody>
     <tr class="table-light">
+      <?php foreach($products as $product) { ?>
       <th scope="row"><img class="post-thumb" src="placeholder" height="30" width="30"></th>
       <td><a href="" class="card-link"></a></td>
       <th scope="row"><small>Posted on: <strong>placeholder</strong></small><th>
-        <?php if($this->session->userdata('item_selected') == $product['Id']): ?>   
-   <?php endif; ?>    
+      <p><?php echo $product['title']; ?></p>
+     <?php } ?> 
     </tr>
   </tbody>
 </table>  
-<button type="submit" class="btn btn-success" name="product_item" value="<?php echo $_SESSION['test']; ?>">Lening afsluiten</button>
+
+<button type="submit" class="btn btn-success" name="product_item" value="">Lening afsluiten</button>
 <hr class="my-4">
 <a class="nav-link" href="<?php echo base_url(); ?>shoppingcart/empty_cart">Winkelwagen legen</a>
 <br>

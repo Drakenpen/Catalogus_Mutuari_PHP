@@ -35,11 +35,9 @@
 				</h4>
 			    <p class="card-text"><?php echo character_limiter($product_item['body'], 100); ?></p>
                 <p>
-                    <?php echo form_open('shoppingcart/add_item'); ?>
-                    	<input type="hidden" name="product_item_id" value="<?php echo $product_item['Id']; ?>">
-                    	<input type="hidden" name="employeenumber" value="<?php echo $_SESSION['employeenumber']; ?>">
-                        <button type="submit" class="btn btn-success" name="product_item" value="<?php echo $product_item['Id']; ?>">Toevoegen</button>
-                    <?php echo form_close(); ?>
+	                    <?php echo form_open('shoppingcart/add_item'); ?>                  	
+	                        <button type="submit" class="btn btn-success" name="product_item" value="<?php echo $product_item['Id']; ?>">Toevoegen</button>
+	                    <?php echo form_close(); ?>                    
                 </p>
 		  </div>
 		</div>

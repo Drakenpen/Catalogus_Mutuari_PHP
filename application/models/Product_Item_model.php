@@ -60,4 +60,10 @@
 				$query = $this->db->get('product_items');
 				return $query->result_array();
 		}
+
+		//Used to receive items from shopping cart session
+		 public function get_selected_products($product_id){
+		 	$query = $this->db->get_where('product_items', array('Id' => $product_id));
+			return $query->result_array();
+		 }
 	}

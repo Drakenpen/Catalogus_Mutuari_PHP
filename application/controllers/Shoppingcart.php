@@ -2,14 +2,13 @@
 	class Shoppingcart extends CI_Controller{	
 		public function index(){
 			$data['title'] = 'Mijn winkelwagen';
-
-			$data['product'] = $this->product_item_model->get_product_items();
 			
 			if($this->session->userdata('item_selected')){
-				echo "welkom";
-				echo $_SESSION['product_item'];
+				$product_id = $_SESSION['product_item'];
+				$data['products'] = $this->product_item_model->get_selected_products($product_id);
 			}
 
+			
 			$this->load->view('_templates/header');
 			$this->load->view('shoppingcart/index', $data);
 			$this->load->view('_templates/footer');
