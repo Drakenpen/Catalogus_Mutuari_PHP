@@ -4,6 +4,7 @@
 			$this->load->database();
 		}
 		
+		//Roept product items op uit de db waar het exemplaar product_id gelijk staat aan een product id
 		public function get_product_items($slug = FALSE){
 			if($slug === FALSE){
 				$this->db->order_by('product_items.Id', 'DESC');
@@ -16,6 +17,7 @@
 			return $query->row_array();
 		}
 
+		//Haalt de post data op en slaat deze op in de db
 		public function create_product_item($product_id){
 			$slug = url_title($this->input->post('title'));
 
@@ -35,6 +37,7 @@
 			return true;
 		}
 
+		//Haalt de post data op en slaat deze op in de db
 		public function update_product_item(){
 			$slug = url_title($this->input->post('title'));
 

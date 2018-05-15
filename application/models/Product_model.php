@@ -16,6 +16,7 @@
 			return $query->row_array();
 		}
 
+		//Haalt de post data op en slaat deze op in de db
 		public function create_product($product_image){
 			$slug = url_title($this->input->post('title'));
 
@@ -50,6 +51,7 @@
 			return $this->db->update('Products', $data); 
 		}
 
+		//Roept producten aan uit de db waar het categorie_id gelijk staat aan een categorie.Id 
 		public function get_products_by_category($category_id){
 				$this->db->order_by('products.id', 'DESC');
 				$this->db->join('categories', 'categories.id = Products.category_id');
@@ -57,6 +59,7 @@
 				return $query->result_array();
 		}
 
+		//Roept product items op uit de db waar het exemplaar product_id gelijk staat aan een product Id
 		public function get_product_items_by_product($product_id){
 				$this->db->order_by('product_items.id', 'DESC');
 				$this->db->join('products', 'products.id = product_items.product_id');

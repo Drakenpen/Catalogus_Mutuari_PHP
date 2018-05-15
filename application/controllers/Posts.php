@@ -4,8 +4,6 @@
 			$data['title'] = 'Gebruikers feedback';
 
 			$data['posts'] = $this->post_model->get_posts();
-			//$data['categories'] = $this->post_model->get_categories(); 
-			//print_r($data['posts']);
 
 			$this->load->view('_templates/header');
 			$this->load->view('posts/index', $data);
@@ -25,6 +23,7 @@
 			$this->load->view('_templates/footer');		
 		}
 
+		//Controleert of titel en content zijn ingevult en roept vervolgens create_post aan in de post_model
 		public function create(){
 			$data['title'] = 'Create Post';
 
@@ -62,6 +61,7 @@
 			}
 		}
 
+		//roept delete_post uit de post_model gebaseert op id
 		public function delete($id){
 			//Check admin
 			if(!$this->session->userdata('logged_in')){
@@ -71,6 +71,7 @@
 				redirect('posts');
 		}
 
+		//Stuurt je naar de edit view voor een post gebaseert op de url slug
 		public function edit($slug){
 			//Check admin
 			if(!$this->session->userdata('logged_in')){

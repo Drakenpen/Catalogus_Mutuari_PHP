@@ -15,6 +15,7 @@
 			return $query->row_array();
 		}
 
+		//Haalt de post data op en slaat deze op in de db
 		public function create_post($post_image){
 			$slug = url_title($this->input->post('title'));
 

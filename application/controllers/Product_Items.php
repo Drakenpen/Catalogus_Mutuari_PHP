@@ -13,6 +13,7 @@
 			$this->load->view('_templates/footer');		
 		}
 
+		//Controleert of de titel en content zijn ingevult en roept vervolgens create_post aan in de product_model
 		public function create(){
 			//Check admin
 			if(!$this->session->userdata('logged_in')){
@@ -59,20 +60,20 @@
 			}
 		}
 
+		//Roept delete_product_item uit de product_item_model gebaseert op het product_item id
 		public function delete($id){
 			//Check admin
 			if(!$this->session->userdata('logged_in')){
 				redirect('users/login');
 			}
-
 				$this->product_item_model->delete_product_item($id);
-
 				//Message
 				$this->session->set_flashdata('product_item_deleted', 'Het product exemplaar is verwijderd');
 
 				redirect('products');
 		}
 
+		//Stuurt je naar de edit view voor een product_item gebaseert op de url slug
 		public function edit($slug){
 			//Check admin
 			if(!$this->session->userdata('logged_in')){

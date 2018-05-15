@@ -3,6 +3,7 @@
 		public function index(){
 			$data['title'] = 'Mijn winkelwagen';
 			
+			//Wanneer een data is opgeslagen in de cart_data sessie, worden de exemplaren geassosieert met de exemplaar ids opgeroepen
 			if($this->session->userdata('item_selected')){
 				$product_id = $_SESSION['product_item'];
 				$data['products'] = $this->product_item_model->get_selected_products($product_id);
@@ -14,6 +15,7 @@
 			$this->load->view('_templates/footer');
 		}
 
+		//Function in progress
 		public function checkout(){
 			$data['title'] = 'Lening afsluiten';
 			

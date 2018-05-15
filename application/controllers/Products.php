@@ -11,6 +11,7 @@
 			$this->load->view('_templates/footer');
 		}
 
+		//view voor specifieke producten, hier worden ook alle exemplaren opgeroepen per product
 		public function view($slug = NULL){
 			$data['product'] = $this->product_model->get_products($slug);
 

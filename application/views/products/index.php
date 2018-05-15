@@ -24,7 +24,7 @@
 </div>
 <?php else : ?>
 <div class="jumbotron">
-  <p class="lead text-info">Deze categorie lijkt nog geen producten te hebben.</p>
+  <p class="lead text-info">Er lijken hier nog geen producten te zijn.</p>
   <hr class="my-4">
   <p class="lead">
     <a class="btn btn-info btn-lg" href="<?php echo base_url(); ?>categories" role="button">Terug naar categorieën</a>

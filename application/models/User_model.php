@@ -9,13 +9,12 @@
 				'password' => $enc_password
 			);
 
-			//insert user
 			return $this->db->insert('users', $data);
 		}
 
 		//Log in
 		public function login($employeenumber, $password){
-			// Validate
+			//Validatie
 			$this->db->where('employeenumber', $employeenumber);
 			$this->db->where('password', $password);
 
@@ -34,7 +33,7 @@
 			return $query->result_array();
 		}
 
-		// Check employeenumber
+		//Controleert het employeenummer
 		public function check_employeenumber_exists($employeenumber){
 			$query = $this->db->get_where('users', array('employeenumber' => $employeenumber));
 			if(empty($query->row_array())){
