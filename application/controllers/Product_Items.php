@@ -15,7 +15,7 @@
 
 		//Controleert of de titel en content zijn ingevult en roept vervolgens create_post aan in de product_model
 		public function create(){
-			//Check admin
+			//Check 'admin' (Mmomenteel nog log in)
 			if(!$this->session->userdata('logged_in')){
 				redirect('users/login');
 			}
@@ -62,7 +62,6 @@
 
 		//Roept delete_product_item uit de product_item_model gebaseert op het product_item id
 		public function delete($id){
-			//Check admin
 			if(!$this->session->userdata('logged_in')){
 				redirect('users/login');
 			}
@@ -75,7 +74,6 @@
 
 		//Stuurt je naar de edit view voor een product_item gebaseert op de url slug
 		public function edit($slug){
-			//Check admin
 			if(!$this->session->userdata('logged_in')){
 				redirect('users/login');
 			}
@@ -94,7 +92,6 @@
 		}
 
 		public function update(){
-			//Check admin
 			if(!$this->session->userdata('logged_in')){
 				redirect('users/login');
 			}

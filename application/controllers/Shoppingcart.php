@@ -29,7 +29,7 @@
 			$this->load->view('_templates/footer');
 		}
 
-		//Clears item session
+		//Clears the product_item session
 		public function empty_cart(){
 			$this->session->unset_userdata('item_selected');
 			$this->session->unset_userdata('product_item');
